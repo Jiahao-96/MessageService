@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MessageServiceImpl implements MessageService {
@@ -31,5 +32,10 @@ public class MessageServiceImpl implements MessageService {
     @Override
     public List<Message> getAll() {
         return messageRepository.findAll();
+    }
+
+    @Override
+    public Message getById(String id) {
+        return messageRepository.findMessageById(id);
     }
 }

@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface MessageRepository extends MongoRepository<Message, String> {
     Message findMessageByContent(String content);
     Message findMessageBySender(String sender);
+    Message findMessageById(String id);
 }
